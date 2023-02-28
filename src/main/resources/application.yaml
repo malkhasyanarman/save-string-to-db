@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/spring_kafka_demo?stringtype=unspecified'
+    username: postgres
+    password: root
+  kafka:
+    bootstrap-servers: 'localhost:9092'
+    consumer:
+      group-id: wordGroup
+
+server:
+  port: 8091
