@@ -1,15 +1,16 @@
-package com.malkhasyan.stringsaver.dto;
+package com.malkhasyan.stringsaver.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-public class Message {
+@Table(name = "message")
+public class MessageEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @SequenceGenerator(name = "message-id-generator", sequenceName = "message_id", allocationSize = 1)
     private Long id;
-    private Timestamp date_received;
+    private Timestamp dateReceived;
     private String word;
 
     public Long getId() {
@@ -20,12 +21,12 @@ public class Message {
         this.id = id;
     }
 
-    public Timestamp getDate_received() {
-        return date_received;
+    public Timestamp getDateReceived() {
+        return dateReceived;
     }
 
-    public void setDate_received(Timestamp date_received) {
-        this.date_received = date_received;
+    public void setDateReceived(Timestamp dateReceived) {
+        this.dateReceived = dateReceived;
     }
 
     public String getWord() {
